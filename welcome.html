@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\Welcome\Desktop\New folder\index.css">
+    <title>Welcome Page</title>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome</h1>
+        <p id="welcome-message"></p>
+    </div>
+    <script>
+        
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (!email || !password) {
+        errorMessage.textContent = "Both email and password are required.";
+        return;
+    }
+
+    const username = email.split("@")[0];
+    window.location.href = "welcome.html?username=" + encodeURIComponent(username);
+});
+
+    </script>
+</body>
+</html>
+
+
+
